@@ -1,0 +1,7 @@
+[package]
+name = "drm-tests"
+version = "0.1.0"
+authors = ["Felix Dubrownik <felix@light-instruments.de>"]
+
+[dependencies]
+drm = "0.3"
