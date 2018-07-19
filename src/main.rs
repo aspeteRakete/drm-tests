@@ -48,15 +48,15 @@ fn main() {
     for &con in res_handles.connectors() {
         let info = card.resource_info(con).unwrap();
 
-        println!("{:#?}")
+        println!("{:#?}", info)
     }
 
     // Print all CRTC information
     for &crtc in res_handles.crtcs() {
         let info = card.resource_info(crtc).unwrap();
 
-        println!("{:#?}")
+        println!("{:#?}", info)
     }
 
-    
+
 }
