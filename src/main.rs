@@ -70,10 +70,10 @@ fn main() {
     for &info in coninfo.iter() {
         for &mode in &info.modes().iter() {
             println!("Connector Mode:");
-            println!(":?", mode);
+            println!(":#?", mode);
         }
     }
-    
+
     // Filter each connector until we find one that's connected.
 //    let con = coninfo
 //        .iter()
