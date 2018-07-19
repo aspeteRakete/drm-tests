@@ -71,6 +71,7 @@ fn main() {
         for mode in info.modes().iter() {
             println!("Connector Mode:");
             println!("{},{}", mode.size().0, mode.size().1);
+            println!("{}", mode.vrefresh());
         }
     }
 
