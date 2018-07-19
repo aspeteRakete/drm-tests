@@ -70,7 +70,7 @@ fn main() {
     for &info in coninfo.iter() {
         for &mode in &info.modes().iter() {
             println!("Connector Mode:");
-            println!(":#?", mode);
+            println!(":#?", mode.size());
         }
     }
 
