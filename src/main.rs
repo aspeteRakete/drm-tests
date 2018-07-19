@@ -65,10 +65,10 @@ fn main() {
     let res = card.resource_handles()
         .expect("Could not load normal resource ids.");
     let coninfo: Vec<connector::Info> = load_information(&card, res.connectors());
-    let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
+    //let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
 
-    for &info in coninfo.iter() {
-        for &mode in info.modes().iter() {
+    for info in coninfo.iter() {
+        for mode in info.modes().iter() {
             println!("Connector Mode:");
             println!("{},{}", mode.size().0, mode.size().1);
         }
