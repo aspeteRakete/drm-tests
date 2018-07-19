@@ -46,14 +46,14 @@ fn main() {
 
     // Print all connector information
     for &con in res_handles.connectors() {
-        let info = card.resource_info(con).unwrap();
+        let info :drm::control::connector::Info = card.resource_info(con).unwrap();
 
         println!("{:#?}", info)
     }
 
     // Print all CRTC information
     for &crtc in res_handles.crtcs() {
-        let info = card.resource_info(crtc).unwrap();
+        let info : drm::control::crtc::Info = card.resource_info(crtc).unwrap();
 
         println!("{:#?}", info)
     }
