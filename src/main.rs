@@ -5,7 +5,7 @@ use std::os::unix::io::{AsRawFd, RawFd};
 
 use drm::control::ResourceInfo;
 use drm::control::ResourceHandle;
-use drm::control::{connector, crtc, dumbbuffer, framebuffer};
+use drm::control::{connector, crtc};
 
 use drm::Device as BasicDevice;
 use drm::control::Device as ControlDevice;
@@ -44,7 +44,7 @@ impl  DrmCard {
     }
 }
 
-fn load_information<T, U>(card: &Card, handles: &[T]) -> Vec<U>
+fn load_information<T, U>(card: &DrmCard, handles: &[T]) -> Vec<U>
     where
         T: ResourceHandle,
         U: ResourceInfo<Handle = T>,
@@ -68,7 +68,7 @@ fn main() {
     let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
 
     for &info in coninfo.iter() {
-        for &mode in &info.modes().iter() {
+        for &mode in info.modes().iter() {
             println!("Connector Mode:");
             println!("{}", mode.size());
         }
