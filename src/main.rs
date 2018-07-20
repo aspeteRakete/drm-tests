@@ -65,7 +65,7 @@ fn main() {
     let res = card.resource_handles()
         .expect("Could not load normal resource ids.");
     let coninfo: Vec<connector::Info> = load_information(&card, res.connectors());
-    //let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
+    let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
 
     for info in coninfo.iter() {
         println!("Connector info:");
@@ -75,6 +75,13 @@ fn main() {
         for mode in info.modes().iter() {
             println!("{} x {} @ {}", mode.size().0, mode.size().1,  mode.vrefresh());
         }
+    }
+
+    for info in crtcinfo.iter() {
+        println!("CRTC info:");
+        println!("Position: {},{}", info.position().0, info.position().1);
+        let mode = info.mode().expect("No mode on Crtc set.");
+        println!("Mode: {} x {} @ {} ", mode().size().0, mode().size().1, mode().vrefresh());
     }
 
     // Filter each connector until we find one that's connected.
