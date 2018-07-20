@@ -68,10 +68,13 @@ fn main() {
     //let crtcinfo: Vec<crtc::Info> = load_information(&card, res.crtcs());
 
     for info in coninfo.iter() {
+        println!("Connector info:");
+        println!("Type: {}", info.connector_type());
+        println!("Connected: {}", info.connection_state());
+        println!("Supported Modes:");
         for mode in info.modes().iter() {
-            println!("Connector Mode:");
-            println!("{},{}", mode.size().0, mode.size().1);
-            println!("{}", mode.vrefresh());
+            println!("{} x {} @ {}", mode.size().0, mode.size().1,  mode.vrefresh());
+            println!("{}",);
         }
     }
 
