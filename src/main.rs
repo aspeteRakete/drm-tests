@@ -81,7 +81,7 @@ fn main() {
         println!("CRTC info:");
         println!("Position: {},{}", info.position().0, info.position().1);
         match info.mode() {
-            Some(m) =>  println!("Mode: {} x {} @ {} ", m.size().0, m.size().1, m.vrefresh());,
+            Some(m) =>  println!("Mode: {} x {} @ {} ", m.size().0, m.size().1, m.vrefresh()),
             None => println!("No mode set.")
         }
     }
