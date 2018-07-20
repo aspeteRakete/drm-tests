@@ -74,7 +74,6 @@ fn main() {
         println!("Supported Modes:");
         for mode in info.modes().iter() {
             println!("{} x {} @ {}", mode.size().0, mode.size().1,  mode.vrefresh());
-            println!("{}",);
         }
     }
 
