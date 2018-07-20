@@ -81,7 +81,7 @@ fn main() {
         println!("CRTC info:");
         println!("Position: {},{}", info.position().0, info.position().1);
         let mode = info.mode().expect("No mode on Crtc set.");
-        println!("Mode: {} x {} @ {} ", mode().size().0, mode().size().1, mode().vrefresh());
+        println!("Mode: {} x {} @ {} ", mode.size().0, mode.size().1, mode.vrefresh());
     }
 
     // Filter each connector until we find one that's connected.
