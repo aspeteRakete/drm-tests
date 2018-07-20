@@ -69,7 +69,7 @@ fn main() {
 
     for info in coninfo.iter() {
         println!("Connector info:");
-        println!("Type: {}", info.connector_type());
+        println!("Type: {:#?}", info.connector_type());
         println!("Connected: {:#?}", info.connection_state());
         println!("Supported Modes:");
         for mode in info.modes().iter() {
